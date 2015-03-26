@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta class="myrefresh" http-equiv="refresh" content="5;url='http://www.linkshop.com.cn/index.htm'">
+		<title></title>
+	</head>
+	<body>
+		<p>感谢浏览，页面5s后将为您跳转到联商网首页</p>
+		<div>感谢第<p class="count">0</p>次访问本网页</div>
+	</body>
+</html>
+<script>
+
+	if(localStorage.count){
+		//第2次进来 localStorage.count == 1;不过这个1是string类型。
+		
+//		localStorage.count = Number(localStorage.count) + 1;//别再用parserInt做转换了，用number吧！ 
+		localStorage["count"] = Number(localStorage.count) + 1
+	}else{
+		//第1次进来 localStorage.count == undefined;
+		//然后赋值为数字类型1;
+		localStorage.count = 1; 
+	}
+	
+	//统计访问次数
+	document.querySelector(".count").innerHTML = localStorage.count;
+
+
+//增删改查的语法例子
+
+//localStorage.a = 3;//设置a为"3"
+//localStorage["a"] = "sfsf";//设置a为"sfsf"，覆盖上面的值
+//
+//localStorage.setItem("b","isaac");//设置b为"isaac"
+//
+//var a1 = localStorage["a"];//获取a的值
+//var a2 = localStorage.a;//获取a的值
+//
+//var b = localStorage.getItem("b");//获取b的值
+//localStorage.removeItem("c");//清除c的值
+//还有删除localstorage数据，请清除浏览器缓存
+
+</script>
